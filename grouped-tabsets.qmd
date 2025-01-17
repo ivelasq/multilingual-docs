@@ -1,0 +1,111 @@
+---
+title: "Grouped Tabsets Example"
+format: html
+editor: source
+---
+
+```{r}
+#| include: false
+reticulate::use_virtualenv(here::here("env"))
+```
+
+## Code
+
+````md
+:::{.panel-tabset group="language"}
+
+## R
+
+```{{r}}
+data("mtcars")
+mtcars$fuel_efficiency <- ifelse(mtcars$mpg > 20, "Efficient", "Not Efficient")
+
+plot(
+  mtcars$wt, mtcars$mpg,
+  main = "MPG vs. Weight",
+  xlab = "Weight (1000 lbs)", ylab = "MPG",
+  col = ifelse(mtcars$fuel_efficiency == "Efficient", "green", "red"), pch = 19
+)
+
+legend("topright", legend = c("Efficient", "Not Efficient"), col = c("green", "red"), pch = 19)
+```
+
+## Python
+
+```{{python}}
+1 + 1
+```
+:::
+````
+
+Here is the first tab:
+
+:::{.panel-tabset group="language"}
+
+## R
+
+```{r}
+library(ggplot2)
+data("mtcars")
+mtcars$fuel_efficiency <- ifelse(mtcars$mpg > 20, "Efficient", "Not Efficient")
+
+mtcars |>
+  ggplot(aes(x = wt, y = mpg, color = fuel_efficiency)) +
+  geom_point(size = 3) +
+  theme_minimal()
+```
+
+
+## Python
+
+```{python}
+import pandas as pd
+from plotnine import ggplot, aes, geom_point, theme_minimal
+
+mtcars = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mpg.csv").dropna()
+mtcars['fuel_efficiency'] = ['Efficient' if mpg > 20 else 'Not Efficient' for mpg in mtcars['mpg']]
+
+plot = (
+    ggplot(mtcars, aes(x='weight', y='mpg', color='fuel_efficiency')) +
+    geom_point(size=3) +
+    theme_minimal()
+    )
+
+plot.show()
+```
+
+:::
+
+Here is the second tabset:
+
+:::{.panel-tabset group="language"}
+
+## R
+
+```{r}
+library(gt)
+towny <- gt::towny
+
+towny_mini <- towny[order(-towny$density_2021), c("name", "website", "density_2021", "land_area_km2", "latitude", "longitude")]
+towny_mini <- head(towny_mini, 10)
+
+gt(towny)
+```
+
+## Python
+
+```{python}
+from great_tables import GT, html
+from great_tables.data import towny
+
+towny_mini = (
+    towny[["name", "website", "density_2021", "land_area_km2", "latitude", "longitude"]]
+    .sort_values("density_2021", ascending=False)
+    .head(10)
+)
+
+(
+    GT(towny_mini)
+)
+```
+:::
