@@ -1,0 +1,44 @@
+---
+title: "Tabby Extension Example"
+format: html
+editor: source
+filters:
+  - tabby
+---
+
+```{r}
+#| include: false
+reticulate::use_virtualenv(here::here("env"))
+```
+
+::: {.tabby}
+```{r}
+data("mtcars")
+mtcars$fuel_efficiency <- ifelse(mtcars$mpg > 20, "Efficient", "Not Efficient")
+
+plot(
+  mtcars$wt, mtcars$mpg,
+  main = "MPG vs. Weight",
+  xlab = "Weight (1000 lbs)", ylab = "MPG",
+  col = ifelse(mtcars$fuel_efficiency == "Efficient", "green", "red"), pch = 19
+)
+
+legend("topright", legend = c("Efficient", "Not Efficient"), col = c("green", "red"), pch = 19)
+```
+
+```{python}
+import pandas as pd
+from plotnine import ggplot, aes, geom_point, theme_minimal
+
+mtcars = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mpg.csv").dropna()
+mtcars['fuel_efficiency'] = ['Efficient' if mpg > 20 else 'Not Efficient' for mpg in mtcars['mpg']]
+
+plot = (
+    ggplot(mtcars, aes(x='weight', y='mpg', color='fuel_efficiency')) +
+    geom_point(size=3) +
+    theme_minimal()
+    )
+
+plot.show()
+```
+:::

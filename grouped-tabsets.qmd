@@ -33,7 +33,19 @@ legend("topright", legend = c("Efficient", "Not Efficient"), col = c("green", "r
 ## Python
 
 ```{{python}}
-1 + 1
+import pandas as pd
+from plotnine import ggplot, aes, geom_point, theme_minimal
+
+mtcars = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/mpg.csv").dropna()
+mtcars['fuel_efficiency'] = ['Efficient' if mpg > 20 else 'Not Efficient' for mpg in mtcars['mpg']]
+
+plot = (
+    ggplot(mtcars, aes(x='weight', y='mpg', color='fuel_efficiency')) +
+    geom_point(size=3) +
+    theme_minimal()
+    )
+
+plot.show()
 ```
 :::
 ````
@@ -54,7 +66,6 @@ mtcars |>
   geom_point(size = 3) +
   theme_minimal()
 ```
-
 
 ## Python
 
