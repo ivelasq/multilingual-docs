@@ -9,11 +9,23 @@ interesting use case:
 > same documentation, but quickly switching between R and Python for our
 > users, that need to see one language or the other.
 
-[Quarto](https://quarto.org/) is a multilingual authoring system by
-Posit, and its built-in support for multiple programming languages makes
-it an excellent choice for developers, technical writers, and educators
-looking to create flexible, multilingual documentation. Below, we’ll
-explore two approaches to implement this functionality:
+Wes and Hadley explored [Quarto](https://quarto.org/) as a possible
+solution, and we enjoyed the discussion so much that we turned it into a
+blog post!
+
+<script src="https://fast.wistia.com/player.js" async></script>
+
+<script src="https://fast.wistia.com/embed/n1uk85o5hv.js" async type="module"></script>
+
+<style>wistia-player[media-id='n1uk85o5hv']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/n1uk85o5hv/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+
+<wistia-player media-id="n1uk85o5hv"></wistia-player>
+
+Quarto is a multilingual authoring system by Posit, and its built-in
+support for multiple programming languages makes it an excellent choice
+for developers, technical writers, and educators looking to create
+multilingual documentation. Below, we’ll explore two approaches to
+implement this functionality:
 
 - [Group tabsets on a page](#groups)
 - [Tabby extension](#tabby)
@@ -70,12 +82,13 @@ Python code here
 :::
 ````
 
-(Insert link to example)
+See an example here:
 
 ## tabby extension
 
 The [Tabby extension](https://quarto.thecoatlessprofessor.com/tabby/) by
-Coatless provides another way to create multilingual documentation.
+James J. Balamuta provides another way to create multilingual
+documentation.
 
 Similar to the example above, you can assign a `group` attribute (e.g.,
 `language`) a Tabby `div.` However, unlike grouped tabsets, where you
@@ -117,7 +130,7 @@ selection](https://quarto.thecoatlessprofessor.com/tabby/#default-tab-selection)
 which is handy if you would like to prioritize the most relevant
 language for your audience.
 
-(Insert link to example)
+See an example here:
 
 ## Learn more
 
