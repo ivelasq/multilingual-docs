@@ -6,6 +6,8 @@ filters:
   - tabby
 ---
 
+Here is an example of [grouped tabset](https://quarto.org/docs/output-formats/html-basics.html#tabset-groups) in [Quarto](https://quarto.org/) created with the [Tabby extension](https://quarto.thecoatlessprofessor.com/tabby/). Select Python to see both tabsets switch. The code is [available on GitHub](https://github.com/ivelasq/multilingual-docs/blob/main/tabby-example.qmd).
+
 ```{r}
 #| include: false
 reticulate::use_virtualenv(here::here("env"))
@@ -40,5 +42,33 @@ plot = (
     )
 
 plot.show()
+```
+:::
+
+
+::: {.tabby}
+```{r}
+library(gt)
+towny <- gt::towny
+
+towny_mini <- towny[order(-towny$density_2021), c("name", "website", "density_2021", "land_area_km2", "latitude", "longitude")]
+towny_mini <- head(towny_mini, 10)
+
+gt(towny_mini)
+```
+
+```{python}
+from great_tables import GT, html
+from great_tables.data import towny
+
+towny_mini = (
+    towny[["name", "website", "density_2021", "land_area_km2", "latitude", "longitude"]]
+    .sort_values("density_2021", ascending=False)
+    .head(10)
+)
+
+(
+    GT(towny_mini)
+)
 ```
 :::
