@@ -4,11 +4,6 @@ format: html
 editor: source
 ---
 
-```{r}
-#| include: false
-reticulate::use_virtualenv(here::here("env"))
-```
-
 Here is an example of [grouped tabsets](https://quarto.org/docs/output-formats/html-basics.html#tabset-groups) in [Quarto](https://quarto.org/). Select Python to see both tabsets switch. The code is [available on GitHub](https://github.com/ivelasq/multilingual-docs/blob/main/grouped-tabsets.qmd).
 
 ## First tabset

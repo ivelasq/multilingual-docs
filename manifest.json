@@ -2425,16 +2425,16 @@
       "checksum": "d828775275749701b48bd9d958814111"
     },
     "grouped-tabsets.html": {
-      "checksum": "921314b23ee098e1e042a61eb958ae81"
+      "checksum": "2be037c76e509358f9abcb6e9dde0718"
     },
     "grouped-tabsets.qmd": {
-      "checksum": "ab1912f32c18a7bce3bed3aac9365bdc"
+      "checksum": "33ff7f211bf3a40a619a7108f98e5b52"
     },
     "README.md": {
       "checksum": "421486c406e9f83c9c4a08a33debf388"
     },
     "requirements.txt": {
-      "checksum": "5750770d2b39ba2faca74914dcf808fa"
+      "checksum": "72a433cf5f4494fc6a71b26933d37a82"
     },
     "tabby-example_files/figure-html/unnamed-chunk-2-1.png": {
       "checksum": "105fa54c614c2c4f8e5f72e6cc30de68"
@@ -2476,10 +2476,10 @@
       "checksum": "d828775275749701b48bd9d958814111"
     },
     "tabby-example.html": {
-      "checksum": "fbd0ab2690b6d9d0f6227900a3500908"
+      "checksum": "8d1d6319697baaf8e76eb687c18eb884"
     },
     "tabby-example.qmd": {
-      "checksum": "31dca515d3d0042d16f53c01b2552e9a"
+      "checksum": "567c3bf5e2e07d0289921617aef80e92"
     }
   },
   "users": null
