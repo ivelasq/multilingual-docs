@@ -8,11 +8,6 @@ filters:
 
 Here is an example of [grouped tabset](https://quarto.org/docs/output-formats/html-basics.html#tabset-groups) in [Quarto](https://quarto.org/) created with the [Tabby extension](https://quarto.thecoatlessprofessor.com/tabby/). Select Python to see both tabsets switch. The code is [available on GitHub](https://github.com/ivelasq/multilingual-docs/blob/main/tabby-example.qmd).
 
-```{r}
-#| include: false
-reticulate::use_virtualenv(here::here("env"))
-```
-
 ::: {.tabby}
 ```{r}
 data("mtcars")
